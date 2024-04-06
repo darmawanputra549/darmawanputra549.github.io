@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Data Pribadi</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron bg-primary text-white">
+      <h1 class="display-5">Form Aplikasi</h1>
+    </div>
+    
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Isi Data Pribadi</h2>
+        <form id="dataForm">
+          <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="nim">NIM:</label>
+            <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <input type="text" class="form-control" id="alamat" placeholder="Masukkan alamat Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="telepon">No. Telepon:</label>
+            <input type="tel" class="form-control" id="telepon" placeholder="Masukkan nomor telepon Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Alamat Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Masukkan alamat email Anda" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="saveData()">Lanjut</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    function saveData() {
+      // Mendapatkan nilai input dari form
+      var nama = document.getElementById("nama").value;
+      var nim = document.getElementById("nim").value;
+      var alamat = document.getElementById("alamat").value;
+      var telepon = document.getElementById("telepon").value;
+      var email = document.getElementById("email").value;
+      
+      // Menyimpan data ke dalam sessionStorage
+      sessionStorage.setItem("nama", nama);
+      sessionStorage.setItem("nim", nim);
+      sessionStorage.setItem("alamat", alamat);
+      sessionStorage.setItem("telepon", telepon);
+      sessionStorage.setItem("email", email);
+      
+      // Mengarahkan pengguna ke halaman berikutnya
+      window.location.href = "HTML2.html";
+    }
+  </script>
+</body>
+</html>
